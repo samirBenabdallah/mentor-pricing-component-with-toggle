@@ -1,0 +1,151 @@
+:root {
+  --Linear-Gradient: hsl(236, 72%, 79%), #696fdd;
+  --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 20px 40px;
+  background-color: var(--Very-Light-Grayish-Blue);
+}
+main > img {
+  position: absolute;
+}
+body > main > :is(:not(img)) {
+  z-index: 1;
+}
+main > .bottom {
+  bottom: -10%;
+  left: 0;
+}
+main > .top {
+  top: -30%;
+  right: 0;
+}
+main > h1 {
+  font-weight: 700;
+  color: var(--Dark-Grayish-Blue);
+}
+main > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  margin-block: 20px;
+  transition: all ease-in-out 0.5s;
+}
+main > div > div:hover {
+  transition: all linear 0.5s;
+  opacity: 0.9;
+}
+.monthly {
+  transform: translateX(35px);
+}
+.yearly {
+  transform: translateX(0);
+}
+main > div > div {
+  width: 70px;
+  height: 35px;
+  margin-inline: 10px;
+  padding: 5px;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, var(--Linear-Gradient));
+}
+main > div > div > div {
+  --size: 25px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--Very-Light-Grayish-Blue);
+  transition: all linear 0.5s;
+}
+main > div > * {
+  color: var(--Light-Grayish-Blue);
+}
+main > section {
+  display: flex;
+  width: 90%;
+  height: 80%;
+}
+main > section > div {
+  cursor: pointer;
+  justify-content: space-evenly;
+  width: calc(100% / 3);
+  height: 100%;
+  border-radius: 20px;
+  padding-block: 10px;
+  background-color: white;
+}
+main > section > div p {
+  color: var(--Grayish-Blue);
+  font-weight: 700;
+}
+main > section > div .price {
+  font-size: 3rem;
+  color: var(--Dark-Grayish-Blue);
+}
+main > section > div .line {
+  width: 80%;
+  height: 1px;
+  background-color: var(--Light-Grayish-Blue);
+}
+main > section > div button {
+  outline: none;
+  border: none;
+  width: 80%;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--Very-Light-Grayish-Blue);
+  background-image: linear-gradient(to bottom, var(--Linear-Gradient));
+}
+main > section > div button:hover {
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+  background-color: transparent !important;
+  background-image: none;
+  color: #696fdd;
+  border: solid 1px var(--Dark-Grayish-Blue) !important;
+}
+/* active mode */
+.active {
+  background-image: linear-gradient(to right, var(--Linear-Gradient));
+}
+.active p {
+  color: white;
+}
+.active button {
+  background-image: none;
+  background-color: white !important;
+  color: #696fdd;
+}
+.active button:hover {
+  border: solid 1px var(--Dark-Grayish-Blue) var(--Very-Light-Grayish-Blue);
+  color: var(--Very-Light-Grayish-Blue);
+}
